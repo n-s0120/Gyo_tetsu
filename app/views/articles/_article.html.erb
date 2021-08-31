@@ -1,8 +1,8 @@
 <!--記事のtd要素の部分テンプレート-->
-<tbody>
-  <tr id='article_<%= article.id %>'>
+<tbody id='article_<%= article.id %>'>
+  <tr>
     <td><%= article.user.name %></td>
-    <td><%= article.title %></td>
+    <td><%= article.title %><br><%= attachment_image_tag article, :image, format: "jpeg", size: "30x30", fallback: "no_image.jpg" %></td>
     <td><%= article.introduction %></td>
     <!--acts-as-taggable-onの部分テンプレート-->
     <td><%= render 'favorites/tag_list', tag_list: article.tag_list %></td>

@@ -11,4 +11,5 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :reports, dependent: :destroy
   has_many :report_article, through: :reports, source: :article
+  has_many :articles, dependent: :destroy
 end

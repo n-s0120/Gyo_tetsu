@@ -16,6 +16,12 @@
   <div class="article-new-content">
     <%= form_with model: @article, local: true do |f| %>
       <div class="form-group">
+        <%= f.label :画像 %>
+        <br>
+        <%= f.attachment_field :image %>
+      </div>
+      
+      <div class="form-group">
         <%= f.label :記事タイトル %>
         <br>
         <%= f.text_field :title %>

@@ -2,6 +2,7 @@
 
 class Article < ApplicationRecord
   belongs_to :user
+  attachment :image
   has_many :comments, dependent: :destroy
 
   has_many :favorites, dependent: :destroy
@@ -16,6 +17,8 @@ class Article < ApplicationRecord
   def reported_by?(user)
     reports.where(user_id: user.id).exists?
   end
+  
+  belongs_to :user
 
   acts_as_taggable
 end
