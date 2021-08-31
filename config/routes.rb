@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   end
   get 'reports' => 'reports#index'
   resources :flowcharts
+  resources :user_images, only: [:new, :create, :index, :show, :destroy]
 end
